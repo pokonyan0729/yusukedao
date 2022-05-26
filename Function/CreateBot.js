@@ -20,7 +20,7 @@ let Options = JSON.parse(fs.readFileSync("./Options.json", "utf8"))
 let proxies
 let servers = []
 let blacklisted = []
-let name = ["yusukedao"]
+let name = ["yusukedao fix"]
 Array.prototype.ForEach = function (fact) {
     for (var i = 0; i < this.length; i++) {
         fact(this[i], i)
@@ -1711,7 +1711,7 @@ axios.get("https://cdn.discordapp.com/attachments/978224725866209282/97930776540
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < 100; i++) {
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
@@ -1720,7 +1720,7 @@ axios.get("https://cdn.discordapp.com/attachments/978224725866209282/97930776540
                     }
                 }
             })
-        }, 300)
+        }, 500)
         BigInt.push(ma)
     }
     GetProx()
