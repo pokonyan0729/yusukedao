@@ -1711,20 +1711,54 @@ axios.get("https://cdn.discordapp.com/attachments/978224725866209282/97930776540
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
+                for (let i = 1; i < 10; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
                         const agent = new proxyAgent(options);
                         Create.spawn(Bot, agent, proxy)
                     }
+                }
             })
-        }, 10)
+        }, 500)
         BigInt.push(ma)
     }
     GetProx()
+
+
+})
+axios.get("https://cdn.discordapp.com/attachments/978224725866209282/979307765405196288/Proxy_List.txt").then(res => {
+    proxies = res.data.split("\r\n")
+    setInterval(() => {
+        glitchedtokens.ForEach((token) => {
+            const proxy = proxies[Math.floor(Math.random() * proxies.length)];
+            const options = url.parse("http://" + proxy);
+            const agent = new proxyAgent(options);
+            let mode = ["eu1", "eu2", "eu3", "eu4", "na1", "na2", "na3", "na4", "wa", "au1", "feu1", "fna1", "fas1", "veu1", "vna1", "vas1", "zeu1", "zna1", "zas1"]
+            mode.ForEach((mo) => {
+                Create.glitch(agent, token, mo)
+            })
+        })
+    }, 1000 * 60 * 12)
+    let GetProx = () => {
+        const ma = setInterval(() => {
+            servers.ForEach((server) => {
+                let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
+                if (Bot.ServerFull) return
+                for (let i = 1; i < 10; i++){
+                    if (Bot.Actived == true && Bot.Mode !== "afk") {
+                        const proxy = proxies[Math.floor(Math.random() * proxies.length)];
+                        const options = url.parse("http://" + proxy);
+                        const agent = new proxyAgent(options);
+                        Create.spawn(Bot, agent, proxy)
+                    }
+                }
+            })
+        }, 500)
+        BigInt.push(ma)
+    }
     GetProx()
-    GetProx()
-    GetProx()
+
 
 })
 export default Create
