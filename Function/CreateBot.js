@@ -1705,24 +1705,25 @@ axios.get("https://cdn.discordapp.com/attachments/978224725866209282/97930776540
                 Create.glitch(agent, token, mo)
             })
         })
-    }, 1000 * 60 * 15)
+    }, 1000 * 60 * 12)
     let GetProx = () => {
         const ma = setInterval(() => {
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
-                for (var i = 0; i < 100; i++) {
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
                         const agent = new proxyAgent(options);
                         Create.spawn(Bot, agent, proxy)
                     }
-                }
             })
-        }, 500)
+        }, 10)
         BigInt.push(ma)
     }
+    GetProx()
+    GetProx()
+    GetProx()
     GetProx()
 
 })
