@@ -1,0 +1,25 @@
+{
+    "server": "wss://frankfurt2.starve.io/server711",
+    "speed": 15,
+    "speed2": 500,
+    "__comment__": "Mode : seafarm-unblockred-farmred-unblockblue-farmblue",
+    "Mode": "seafarm",
+    "Pathfind": {
+        "Seafarm": {
+            "x": 14333,"y": 11259,
+            "RangeBeforeDrop": {
+                "x": 1300,
+                "y": 820
+            },
+            "drop": [217,168,155,2,104,129,135,112,119,161,216]
+        }
+    },
+    "Teammode": {
+        "red":{
+            "drop": [89,104,35,28,122]
+        },
+        "blue":{
+            "drop": [89,104,35,28,122]
+        }
+    }
+}   

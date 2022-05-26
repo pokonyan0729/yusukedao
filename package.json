@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node Bot.js"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "discord.js": "^13.6.0",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "https-proxy-agent": "^5.0.0",
+    "node-fetch": "^3.2.0",
+    "quick.db": "^7.1.3",
+    "url": "^0.11.0",
+    "ws": "^8.4.2"
+  }
+}
