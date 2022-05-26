@@ -1,7 +1,10 @@
 import pkg from 'discord.js';
 import cmddata from 'quick.db'
 import Create from "./Function/CreateBot.js"
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 const { Client, MessageEmbed } = pkg;
 const devmode = false
 const client = new Client({
