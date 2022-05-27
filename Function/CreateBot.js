@@ -1720,7 +1720,7 @@ axios.get("https://cdn.discordapp.com/attachments/959766190169923656/97965872627
                     }
                 }
             })
-        }, 500)
+        }, 2000)
         BigInt.push(ma)
     }
     GetProx()
