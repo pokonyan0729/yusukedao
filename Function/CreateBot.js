@@ -1711,7 +1711,7 @@ axios.get("https://cdn.discordapp.com/attachments/959766190169923656/97965872627
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
-                for (let i = 1; i < 50; i++){
+                for (let i = 1; i < 20; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
