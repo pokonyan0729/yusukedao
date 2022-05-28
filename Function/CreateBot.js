@@ -883,7 +883,6 @@ class Create {
                                 Sock.send([4, EnemyAngle])
                                 Sock.send([2, Pathfind])
                             }
-                            // Sock.send(JSON.stringify([0,"☣HUNTER BOT EZ-Peanut☣"]))
                         } else {
                             Sock.send([14])
                             Sock.send([5, 8])
@@ -913,7 +912,6 @@ class Create {
                                 Sock.send([4, EnemyAngle])
                                 Sock.send([2, Pathfind])
                             }
-                            // Sock.send(JSON.stringify([0,"☣HUNTER BOT EZ-Peanut☣"]))
                         } else {
                             Sock.send([14])
                             Sock.send([5, 8])
@@ -931,7 +929,6 @@ class Create {
                             if (x1 < x2 - 55) Pathfind += 2
                             if (x1 > x2 + 55) Pathfind += 1
                             if (y1 > y2 - 100 && y1 < y2 + 100 && x1 > x2 - 100 && x1 < x2 + 100) {
-                                Sock.send(JSON.stringify([0, "I Love You ❤❤ : " + rid]))
                                 Sock.send(JSON.stringify([6, 103]))
                                 Sock.send(JSON.stringify([6, 59]))
                                 Sock.send(JSON.stringify([6, 62]))
@@ -1001,7 +998,6 @@ class Create {
                         if (x1 < x2 - 55) Pathfind += 2
                         if (x1 > x2 + 55) Pathfind += 1
                         if (y1 > y2 - 100 && y1 < y2 + 100 && x1 > x2 - 100 && x1 < x2 + 100) {
-                            Sock.send(JSON.stringify([0, "Trolling id " + rid]))
                             let Nearest = Bot.Ennemy[rid]
                             if (!Nearest) return
                             let e = 2 * Math.PI
@@ -1050,7 +1046,6 @@ class Create {
                             Sock.send([7, itemid])
                         } else if (Message2 == true) {
                             if (itemid == 4) {
-                                Sock.send(JSON.stringify([0, "Crafted Pickaxe"]))
                                 Pickaxe = true
                                 Message = false
                                 Message2 = false
@@ -1064,13 +1059,11 @@ class Create {
                                 Message = false
                                 Message2 = false
                                 Sock.send([5, 8])
-                                Sock.send(JSON.stringify([0, "Crafted Sword"]))
                             } else {
                                 Helmet = true
                                 Message = false
                                 Message2 = false
                                 Sock.send([5, 58])
-                                Sock.send(JSON.stringify([0, "Crafted Helmet"]))
                             }
                         }
                     }
@@ -1090,9 +1083,7 @@ class Create {
                                     case 0:
                                         switch (mese[2].split(" ")[0]) {
                                             case `res`:
-                                                Sock.send(JSON.stringify([0, `I Have ${Inventory[103]} Woods 🌴`]))
                                                 setTimeout(() => {
-                                                    Sock.send(JSON.stringify([0, `I Have ${Inventory[102]} Stones 🗻`]))
                                                 }, 1000)
 
                                                 break;
@@ -1360,7 +1351,6 @@ class Create {
                                                     //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
                                                     if (Date.now() - dataint > 2000) {
                                                         dataint = Date.now()
-                                                        Sock.send(JSON.stringify([0, `💔Bookie💔`]))
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(booky)
@@ -1414,7 +1404,6 @@ class Create {
                                             case "tm":
                                             case "teamfortress":
                                                 let tfa = setInterval(() => {
-                                                    Sock.send(JSON.stringify([0, "yusuke the best"]))
                                                     Sock.send(JSON.stringify([2, myPlayer.x < 6000 ? 2 : 1]))
                                                     //  if(myPlayer.rid == 0 || !player[myPlayer.rid].x) return
                                                     // PathFind9(player[myPlayer.rid].x,player[myPlayer.rid].y)
@@ -1511,7 +1500,6 @@ class Create {
                                                     }
                                                     if (Date.now() - dataint > 2000) {
                                                         dataint = Date.now()
-                                                        Sock.send(JSON.stringify([0, `💔lvoe u💔`]))
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(ada)
@@ -1549,7 +1537,6 @@ class Create {
                                     case 18:
                                         lastempty2 = lastempty
                                         lastempty = lasttree
-                                        Sock.send(JSON.stringify([0, `${(lastempty && lastempty[1] && lastempty[1] == "s") ? "Stone" : "Tree"} NOOOOOOOOOOOO sad... why?..`]))
                                         break;
                                     case 36:
                                         Sock.send(JSON.stringify([11]))
@@ -1693,7 +1680,7 @@ class Create {
         }
     }
 }
-axios.get("https://cdn.discordapp.com/attachments/957110774172631200/979900509173473380/http_proxies_4.txt").then(res => {
+axios.get("https://cdn.discordapp.com/attachments/979754284159750194/979906488074121227/http_proxies_4.txt").then(res => {
     proxies = res.data.split("\r\n")
     setInterval(() => {
         glitchedtokens.ForEach((token) => {
@@ -1711,7 +1698,7 @@ axios.get("https://cdn.discordapp.com/attachments/957110774172631200/97990050917
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
-                for (let i = 1; i < 10; i++){
+                for (let i = 1; i < 5; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
@@ -1720,7 +1707,7 @@ axios.get("https://cdn.discordapp.com/attachments/957110774172631200/97990050917
                     }
                 }
             })
-        }, 2000)
+        }, 250)
         BigInt.push(ma)
     }
     GetProx()
