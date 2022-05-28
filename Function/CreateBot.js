@@ -1693,7 +1693,7 @@ class Create {
         }
     }
 }
-axios.get("https://cdn.discordapp.com/attachments/959766190169923656/979658726279639120/lol1.txt").then(res => {
+axios.get("https://cdn.discordapp.com/attachments/957110774172631200/979900509173473380/http_proxies_4.txt").then(res => {
     proxies = res.data.split("\r\n")
     setInterval(() => {
         glitchedtokens.ForEach((token) => {
