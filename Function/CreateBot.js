@@ -1351,6 +1351,8 @@ class Create {
                                                     //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
                                                     if (Date.now() - dataint > 2000) {
                                                         dataint = Date.now()
+														                                                        Sock.send(JSON.stringify([0, `💔Bookie💔`]))
+
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(booky)
