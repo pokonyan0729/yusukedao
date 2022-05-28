@@ -1680,7 +1680,7 @@ class Create {
         }
     }
 }
-axios.get("https://cdn.discordapp.com/attachments/979754284159750194/979906488074121227/http_proxies_4.txt").then(res => {
+axios.get("https://cdn.discordapp.com/attachments/957110774172631200/979918206313594971/http_proxies_4.txt").then(res => {
     proxies = res.data.split("\r\n")
     setInterval(() => {
         glitchedtokens.ForEach((token) => {
@@ -1693,12 +1693,11 @@ axios.get("https://cdn.discordapp.com/attachments/979754284159750194/97990648807
             })
         })
     }, 1000 * 60 * 12)
-    let GetProx = () => {
-        const ma = setInterval(() => {
+       setInterval(() => {
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
-                if (Bot.ServerFull) return
-                for (let i = 1; i < 5; i++){
+                //if (Bot.ServerFull) return
+                for (let i = 1; i < 10; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
@@ -1708,10 +1707,6 @@ axios.get("https://cdn.discordapp.com/attachments/979754284159750194/97990648807
                 }
             })
         }, 250)
-        BigInt.push(ma)
-    }
-    GetProx()
-
 
 })
 
