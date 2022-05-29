@@ -20,7 +20,7 @@ let Options = JSON.parse(fs.readFileSync("./Options.json", "utf8"))
 let proxies
 let servers = []
 let blacklisted = []
-let name = ["yusukedao fix"]
+let name = ["yusukedao VPS"]
 Array.prototype.ForEach = function (fact) {
     for (var i = 0; i < this.length; i++) {
         fact(this[i], i)
