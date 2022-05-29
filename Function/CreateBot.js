@@ -1682,7 +1682,7 @@ class Create {
         }
     }
 }
-axios.get("https://cdn.discordapp.com/attachments/957110774172631200/979941441386205214/proxy.txt").then(res => {
+axios.get("./pro.txt").then(res => {
     proxies = res.data.split("\r\n")
     setInterval(() => {
         glitchedtokens.ForEach((token) => {
