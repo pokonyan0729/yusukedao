@@ -1682,7 +1682,7 @@ class Create {
         }
     }
 }
-axios.get("./pro.txt").then(res => {
+axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
     proxies = res.data.split("\r\n")
     setInterval(() => {
         glitchedtokens.ForEach((token) => {
@@ -1698,7 +1698,7 @@ axios.get("./pro.txt").then(res => {
        setInterval(() => {
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
-                //if (Bot.ServerFull) return
+                if (Bot.ServerFull) return
                 for (let i = 1; i < 5; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
