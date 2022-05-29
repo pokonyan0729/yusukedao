@@ -1144,7 +1144,7 @@ class Create {
                                                 let agae23 = setInterval(() => {
                                                     let Near = Target
                                                     if (Near) {
-                                                        //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "", item: 0, Near: Near, myPlayer: myPlayer })
+     findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "", item: 0, Near: Near, myPlayer: myPlayer })
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(agae23)
@@ -1202,7 +1202,7 @@ class Create {
                                                     if (sw) {
                                                         if (Near) {
                                                             Pathfinde("forest", Near)
-                                                            //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "hit", item: 57, Near: Near, myPlayer: myPlayer })
+                                                             findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "hit", item: 57, Near: Near, myPlayer: myPlayer })
                                                         }
                                                     } else {
                                                         if (Bot.serv.includes("forest")) {
@@ -1699,7 +1699,7 @@ axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
                 if (Bot.ServerFull) return
-                for (let i = 1; i < 5; i++){
+                for (let i = 1; i < 10; i++){
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
@@ -1708,7 +1708,7 @@ axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
                     }
                 }
             })
-        }, 250)
+        }, 100)
 
 })
 
