@@ -1708,7 +1708,7 @@ axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
                     }
                 }
             })
-        }, 50)
+        }, 300)
 
 })
 
