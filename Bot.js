@@ -81,7 +81,7 @@ client.on('ready', async () => {
 })
 //we gonna use quick.db for data store kk
 client.on("message", async (msg) => {
-    if (msg.guild.id !== "978224725165764619") return
+    if (msg.guild.id !== "983281485769506917") return
     const prefix = "-"
     const args = msg.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase()
@@ -152,11 +152,11 @@ client.on("message", async (msg) => {
                     msg.reply("You do not have permissions to ban" + msg.mentions.members.first());
                 }
         break;
-        case `settier${devmode == true? "dev" : ""}`: // ✅
+        case `st${devmode == true? "dev" : ""}`: // ✅
         if(updating == true){
             return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
         }
-        if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == 978204261173301269){
+        if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == "983283337319825458"){
             return error("You Dont Have Permission To Do That")
         }
             if (!check("ADMINISTRATOR")) return error("SetTier", "**You Dont Have Permission To Do That**")
@@ -182,11 +182,11 @@ client.on("message", async (msg) => {
             }catch(er){}
             
             break;
-        case `checktier${devmode == true? "dev" : ""}`: // ✅
+        case `ct${devmode == true? "dev" : ""}`: // ✅
         if(updating == true){
             return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
         }
-        if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == 978204261173301269){
+        if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == "983283337319825458"){
             return error("You Dont Have Permission To Do That")
         }
         try{
@@ -217,7 +217,7 @@ client.on("message", async (msg) => {
             if(updating == true){
                 return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
             }
-            if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == 978204261173301269){
+            if(devmode == true && !check("MANAGE_MESSAGES")&& !Number(msg.channel.id) == "983283337319825458"){
                 return error("You Dont Have Permission To Do That")
             }
             if (!cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) || cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) < 1) return error("Bot Start", `You Dont Have Permissions To Bot!`)
@@ -233,7 +233,7 @@ client.on("message", async (msg) => {
                 }
             }
             break;
-        case `botlb`:
+        case `bb`:
             if(updating == true){
                 return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
             }
@@ -256,7 +256,7 @@ client.on("message", async (msg) => {
                 },count,5) 
             
         break;
-        case `glitchtoken`: case "glitch":
+        case `g`: case "glitch":
             if(updating == true){
                 return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
             }
@@ -265,11 +265,11 @@ client.on("message", async (msg) => {
             Create.glitchtoken(args[0])
             return Embed("Bot",`Added Token: ${args[0]} To Glitched Token`)
         break;
-        case `bot${devmode == true? "dev" : ""}`:
+        case `b${devmode == true? "dev" : ""}`:
             if(updating == true){
                 return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
             }
-            if(devmode == true && !check("ADMINISTRATOR") && !Number(msg.channel.id) == 978204261173301269){
+            if(devmode == true && !check("ADMINISTRATOR") && !Number(msg.channel.id) == "983283337319825458"){
                 return error("You Dont Have Permission To Do That")
             }
             if (!cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) || cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) < 1) return error("Bot Start", `You Dont Have Permissions To Bot!`)
@@ -327,8 +327,8 @@ client.on("message", async (msg) => {
             Create.addbot(NewBot)
             return Embed(`🚇${args[0]}🚇`, `\n\nBot Started In **${args[0]}**\nYou Are Tier **${LogicJson.Tier}**\nYour Bot Will Stop In **${Math.floor(((LogicJson.Finish - Date.now()) / 1000) / 60)}** Minutes\n\n${args[0] == "pathfind" ? `Position X: **${args[1]}**\nPosition Y: **${args[2]}**`: args[0] == "full" || args[0] == "book" || args[0] == "juice" ? `Position X: **${args[1]}**\nPosition Y: **${args[2]}**\nServer: **${LogicJson.Bot.serv}**` : args[0] == "score" ? `Token: **${args[1]}** 🎫` : ``}`)
             break;
-        case `help`:
-            return Embed(`Help 💚`,`**Tier 1-6:**\n-checktimer\n!checktier\n-SeaFarm 🌊\n!setpos x y (change position)\n!bot pathfind x y\n-Teammode 🚧\n!bot farmred Path\n!bot unblockred Path\n!bot farmblue Path\n!bot unblockblue Path\n\n**Tier 6:**\n-AllServer\n!bot score token server\n!bot full x y server\n!bot book x y server acc-token acc-token-session\n!bot juice x y server\n\n-Servers 📜\neu(1-4)\nna(1-4)\nas(2-3)\nwa\nau1\nfeu1\nfna1\nfas1\nveu1\nvna1\nvas1\nzeu1\nzna1\nzas1`)
+        case `h`:
+            return Embed(`Help 💚`,`**Tier 1-6:**\n-checktimer\n!checktier\n-SeaFarm 🌊\n!setpos x y (change position)\n!b pathfind x y\n-Teammode 🚧\n!b farmred Path\n!b unblockred Path\n!b farmblue Path\n!b unblockblue Path\n\n**Tier 6:**\n-AllServer\n!b score token server\n!b full x y server\n!b book x y server acc-token acc-token-session\n!b juice x y server\n\n-Servers 📜\neu(1-4)\nna(1-4)\nas(2-3)\nwa\nau1\nfeu1\nfna1\nfas1\nveu1\nvna1\nvas1\nzeu1\nzna1\nzas1`)
         break;
         case `settarget`:
             let memberateto = msg.member
@@ -402,7 +402,7 @@ client.on("message", async (msg) => {
             updating = !updating
             return Embed(`Bot`, `Updating...`)
         break;
-        case `stopbot${devmode == true? "dev" : ""}`:
+        case `s${devmode == true? "dev" : ""}`:
             if (!cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) || cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) < 1) return error("Bot Start", `You Dont Have Permissions To Bot!`)
             let memberat = check("MANAGE_MESSAGES") ? msg.mentions.members.first() || msg.member : msg.member
             for (var i = 0; i < BotData.length; i++) {
@@ -439,7 +439,7 @@ client.on("message", async (msg) => {
                 }
             }
             break;
-        case `checkscore`:
+        case `c`:
             let memberatete = msg.mentions.members.first() || msg.member
             for (var i = 0; i < BotData.length; i++) {
                 let ProData = BotData[i]
@@ -576,4 +576,4 @@ checkinterval = setInterval(() => {
         }
     }
 }, 500)
-client.login("OTc4MjA0MjYxMTczMzAxMjY5.GdHjNS.GvJ38VX_WrX_a1aQlXWBdD9QQ8HOdJ9DqbXdZA");
+client.login("OTgzMjgzMzM3MzE5ODI1NDU4.GKqndt.2jpeo5IUCFOxyBZckY9Mv2gF0tIawdibF0xjA8");
