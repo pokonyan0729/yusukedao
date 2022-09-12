@@ -1,5 +1,5 @@
 {
-    "server": "wss://frankfurt2.starve.io/server711",
+    "server": "wss://tokyo2.starve.io/server711",
     "speed": 15,
     "speed2": 500,
     "__comment__": "Mode : seafarm-unblockred-farmred-unblockblue-farmblue",
@@ -11,7 +11,7 @@
                 "x": 1300,
                 "y": 820
             },
-            "drop": [217,168,155,2,104,129,135,112,119,161,216]
+            "drop": [28,135,168,155,2,104,129,135,112,119,161,216]
         }
     },
     "Teammode": {
