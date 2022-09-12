@@ -12,36 +12,15 @@ import { naleg1 } from "./Maps/PathfindMap/LegNaMap.js"
 import { euleg1 } from "./Maps/PathfindMap/LegEuMap.js"
 import { asleg1 } from "./Maps/PathfindMap/LegAsMap.js"
 import { zmamap } from "./Maps/PathfindMap/zmamap.js"
-let bros;
-let tokens = []
-let Map_;
-let glitchedtokens = []
-let Options = JSON.parse(fs.readFileSync("./Options.json", "utf8"))
-let proxies
-let servers = []
-let blacklisted = []
-let name = ["yusukedao VPS"]
-Array.prototype.ForEach = function (fact) {
-    for (var i = 0; i < this.length; i++) {
-        fact(this[i], i)
-    }
-}
-Array.prototype.has = function (fact) {
-    let has = false
-    this.ForEach((ta, env) => {
-        if (ta == fact) {
-            has = env
-        }
-    })
-    return has
-}
+let bros,tokens=[],Map_,forestok=!0,forestokk=!0,serverss=[],glitchedtokens=[],Options=JSON.parse(fs.readFileSync("./Options.json","utf8")),proxies,servers=[],blacklisted=[],name=["yusukedaoh"];Array.prototype.ForEach=function(t){for(var o=0;o<this.length;o++)t(this[o],o)},Array.prototype.has=function(e){let r=!1;return this.ForEach((t,o)=>{t==e&&(r=o)}),r};
+let allbot = true;
 let getserv = (mode, smt, ok, a) => {
     mode = mode.toLowerCase()
     let rand = Math.floor(Math.random() * 3 + 1)
     switch (mode) {
-        case "pathfind": case "pathfinder": return `wss://frankfurt${rand}.starve.io/server711`
-        case "farmred": case "unblockred": case "farmblue": case "unblockblue": case "kill": return `wss://frankfurt${rand}.starve.io/server712`
-        case "tm": case "teamfortress": return `wss://frankfurt${rand}.starve.io/server747`
+        case "pathfind": case "pathfinder": return `wss://singapore${rand}.starve.io/server711`
+        case "farmred": case "unblockred": case "farmblue": case "unblockblue": case "kill": return `wss://fremont${rand}.starve.io/server712`
+        case "tm": case "teamfortress": return `wss://toronto${rand}.starve.io/server747`
         case "hg": case "hunger": return `wss://frankfurt${rand}.starve.io/server736`
         case "xd": return `wss://dallas${rand}.starve.io/server3188`
         case `full`: case `score`: case `juice`: case `book`: case `afk`: case `hunt`: case "follow": case "target": case `none`: case `mama`:
@@ -66,17 +45,17 @@ let getserv = (mode, smt, ok, a) => {
                             linka += `frankfurt${rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                             linke += `frankfurt${rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("na")) {
-                            linka += `toronto${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
-                            linke += `toronto${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linka += `frankfurt${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linke += `frankfurt${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("as")) {
-                            linka += `singapore${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
-                            linke += `singapore${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linka += `frankfurt${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linke += `frankfurt${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("wa")) {
-                            linka += `fremont${rand}.starve.io/server-wa`
-                            linke += `fremont${rand}.starve.io/server-wa`
+                            linka += `frankfurt${rand}.starve.io/server-wa`
+                            linke += `frankfurt${rand}.starve.io/server-wa`
                         } else if (smt.includes("au")) {
-                            linka += `sydney${rand}.starve.io/server-au1`
-                            linke += `sydney${rand}.starve.io/server-au1`
+                            linka += `toronto${rand}.starve.io/server-au1`
+                            linke += `toronto${rand}.starve.io/server-au1`
                         }
                     }
                 }
@@ -90,6 +69,7 @@ let getserv = (mode, smt, ok, a) => {
 }
 
 let Bots = []
+let Botss = []
 let rid = 0
 let BigInt = []
 
@@ -106,8 +86,8 @@ class Create {
             Path: Number(Path.Path),
             x: Number(Path.x),
             y: Number(Path.y),
-            Tok1: Path.Tok1,
-            Tok2: Path.Tok2
+            Tok1: Path.Tok1 ,
+            Tok2: Path.Tok2 
         }
         this.workingserv = null
         this.Ennemy = []
@@ -117,7 +97,7 @@ class Create {
         this.botalive = 0
         this.ServerFull = false
         this.chests = []
-        this.lag = (Mode == "unblockred" || Mode == "unblockblue" ? true : false)
+        this.lag = true
         this.paysage = false
         this.chestid = []
         this.chestnum = 0
@@ -146,7 +126,6 @@ class Create {
             Sock.binaryType = "arraybuffer"
             Sock.addEventListener("open", async () => {
                 let a = setInterval(() => {
-                    console.log("opened")
                     if (this.Actived == false) return clearInterval(a)
                     if (this.Ennemy) {
                         Sock.send(JSON.stringify([8, this.pogaerf, this.Ennemy]))
@@ -188,6 +167,41 @@ class Create {
                 servers.push({ serv: bot.law ? bot.law : bot.law, bots: bater })
         }
     }
+	static allbotstop = () => {
+		allbot = false;
+		console.log("stop bot")
+		console.log("stop bot")
+		console.log("stop bot")
+		console.log("stop bot")
+		console.log("stop bot")
+	}
+	static allbotgo = () => {
+		allbot = true;
+	}
+	 static addbott = (bot) => {
+        Botss.push(bot)
+        switch (bot.Mode) {
+            case "pathfind": case "xd": case "farmred": case "unblockred": case "farmblue": case "unblockblue":
+                serverss.ForEach((serv, env) => {
+                    if (serv.serv == bot.Mode) {
+                        return serverss[env].bots.push(bot)
+                    }
+                })
+                let bat = []
+                bat.push(bot)
+                serverss.push({ serv: bot.Mode, bots: bat })
+                break;
+            default:
+                serverss.ForEach((serv, env) => {
+                    if (serv.serv == bot.sa || serv.serv == bot.law) {
+                        return serverss[env].bots.push(bot)
+                    }
+                })
+                let bater = []
+                bater.push(bot)
+                serverss.push({ serv: bot.law ? bot.law : bot.law, bots: bater })
+        }
+    }
     static spawn = (Bot, Agent, Prox) => {
         if (Bot.stopall) return
         try {
@@ -205,9 +219,8 @@ class Create {
             let Mob = []
             let agusga = false
             if (getserv(Bot.Mode, Bot.sa) == "None") return
-            if (getserv(Bot.Mode, Bot.sa) && !Bot.serv.includes("wss")) return
             let serva = getserv(Bot.Mode, Bot.sa)
-            let Sock = new WebSocket(Bot.serv)
+            let Sock = new WebSocket((Bot.workingserv !== null ? Bot.workingserv : serva == "na" ? Bot.serv : serva), { agent: Agent })
             let maperx = 0
             let mapery = 0
             if (Bot.Mode == "xd") {
@@ -239,8 +252,11 @@ class Create {
                     const optionse = url.parse("http://" + proxye);
                     const agente = new proxyAgent(optionse);
                     let taken = Bot.lag ? "🤎" : "💚"
-                    Sock.send(JSON.stringify([Bot.BotName ? Bot.BotName : name[Math.floor(Math.random() * name.length)], 2120, 1280, 52, Bot.Mode == "score" ? Bot.token : "", Bot.Mode == "score" ? Bot.token_id : "", 0, Math.floor(Math.random() * 3), Math.floor(Math.random() * 4), Math.floor(Math.random()), 0, Math.floor(Math.random()), Math.floor(Math.random()), Bot.Pathfind.Tok1, Bot.Pathfind.Tok2, null, (taken ? taken : tokens.pop() || tokens.shift())]));
-                    let myPlayer = {
+
+                    Sock.send(JSON.stringify(["☑️yusukedao☑️", 4000,4000, 52, Bot.Mode == "score" ? Bot.token : "", Bot.Mode == "score" ? Bot.token_id : "", 0, Math.floor(Math.random() * 3), Math.floor(Math.random() * 4), Math.floor(Math.random()), 0, Math.floor(Math.random()), Math.floor(Math.random()),Bot.Pathfind.Tok1, Bot.Pathfind.Tok2 , null, (taken ? taken : tokens.pop() || tokens.shift())]));
+
+			
+			let myPlayer = {
                         id: 0,
                         x: 0,
                         y: 0,
@@ -814,6 +830,7 @@ class Create {
                             return cal
                         }
                     }
+		     let dataint = 0;
                     let PathFind2 = (x2, y2) => {
                         let y1 = myPlayer.y, x1 = myPlayer.x;
                         let Pathfind = 0
@@ -828,6 +845,11 @@ class Create {
                         }
                         if (y1 > y2 - Options.Pathfind.Seafarm.RangeBeforeDrop.y && y1 < y2 + Options.Pathfind.Seafarm.RangeBeforeDrop.y && x1 > x2 - Options.Pathfind.Seafarm.RangeBeforeDrop.x && x1 < x2 + Options.Pathfind.Seafarm.RangeBeforeDrop.x) {
                             Chestall(x2, y2)
+				
+				 if (Date.now() - dataint > 2000) {
+                                                        dataint = Date.now()
+                                                        Sock.send(JSON.stringify([0, `NOW PUTTING`]))
+                                                    }
                         }
                     }
                     let PathFind99 = (x2, y2) => {
@@ -839,7 +861,6 @@ class Create {
                         if (x1 > x2 + 75) Pathfind += 1;
                         Sock.send([2, checkcollision2(Pathfind)])
                         if (y1 > y2 - 500 && y1 < y2 + 500 && x1 > x2 - 500 && x1 < x2 + 500) {
-                            Sock.send([2, 0])
                             if (Bot.chests.length > 0) {
                                 Bot.chests.ForEach((chest) => {
                                     let ch = chest
@@ -912,6 +933,7 @@ class Create {
                                 Sock.send([4, EnemyAngle])
                                 Sock.send([2, Pathfind])
                             }
+
                         } else {
                             Sock.send([14])
                             Sock.send([5, 8])
@@ -929,6 +951,7 @@ class Create {
                             if (x1 < x2 - 55) Pathfind += 2
                             if (x1 > x2 + 55) Pathfind += 1
                             if (y1 > y2 - 100 && y1 < y2 + 100 && x1 > x2 - 100 && x1 < x2 + 100) {
+                                Sock.send(JSON.stringify([0, "I Love You ❤❤ : " + rid]))
                                 Sock.send(JSON.stringify([6, 103]))
                                 Sock.send(JSON.stringify([6, 59]))
                                 Sock.send(JSON.stringify([6, 62]))
@@ -998,6 +1021,7 @@ class Create {
                         if (x1 < x2 - 55) Pathfind += 2
                         if (x1 > x2 + 55) Pathfind += 1
                         if (y1 > y2 - 100 && y1 < y2 + 100 && x1 > x2 - 100 && x1 < x2 + 100) {
+                            Sock.send(JSON.stringify([0, "Trolling id " + rid]))
                             let Nearest = Bot.Ennemy[rid]
                             if (!Nearest) return
                             let e = 2 * Math.PI
@@ -1046,6 +1070,7 @@ class Create {
                             Sock.send([7, itemid])
                         } else if (Message2 == true) {
                             if (itemid == 4) {
+                                Sock.send(JSON.stringify([0, "Crafted Pickaxe"]))
                                 Pickaxe = true
                                 Message = false
                                 Message2 = false
@@ -1059,15 +1084,17 @@ class Create {
                                 Message = false
                                 Message2 = false
                                 Sock.send([5, 8])
+                                Sock.send(JSON.stringify([0, "Crafted Sword"]))
                             } else {
                                 Helmet = true
                                 Message = false
                                 Message2 = false
                                 Sock.send([5, 58])
+                                Sock.send(JSON.stringify([0, "Crafted Helmet"]))
                             }
                         }
-                    }
-                    let dataint = 0
+                    };
+
 
                     let lastempty2 = null
                     let lastempty = null
@@ -1083,7 +1110,9 @@ class Create {
                                     case 0:
                                         switch (mese[2].split(" ")[0]) {
                                             case `res`:
+                                                Sock.send(JSON.stringify([0, `I Have ${Inventory[103]} Woods 🌴`]))
                                                 setTimeout(() => {
+                                                    Sock.send(JSON.stringify([0, `I Have ${Inventory[102]} Stones 🗻`]))
                                                 }, 1000)
 
                                                 break;
@@ -1091,7 +1120,12 @@ class Create {
                                                 dropable.push(Number(mese[2].split(" ")[1]))
                                                 break;
                                             case `ch`:
-                                                console.log(Bot.chests)
+                                                Sock.send(JSON.stringify([0, `I WANNA S E X`]))
+                                                break;
+					    case `ch`:
+							var SS = "abcdefghijklmnopqrstuvwxyz,./\]:;@[\^-=~|{`*}_?>+<サメ"
+							var NN = 20
+                                                Sock.send(JSON.stringify([0, Array.from(Array(NN)).map(()=>SS[Math.floor(Math.random()*SS.length)]).join('')]))
                                                 break;
                                             case "<‎3":
                                                 rid = Number(mese[1]);
@@ -1135,8 +1169,16 @@ class Create {
                                             case "pathfinder":
                                                 Sock.send(JSON.stringify([5, 217]))
                                                 let shat = setInterval(() => {
-                                                    PathFind2(Number(Bot.Pathfind.x), Number(Bot.Pathfind.y))
-                                                }, 1000 / 60)
+
+                                 
+
+                                                }, 1000/60)
+                                             if (myPlayer.y > 12400) {
+                                                        findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(12553 / 100), y: Math.floor(12648 / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28,2,155,168,104,129,112,119,161,216,217] })
+                                                    }
+                                 if (myPlayer.y < 12400) {
+                                                        findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(11000 / 100), y: Math.floor(14000 / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28,2,155,168,104,129,112,119,161,216,217] })
+                                                    }
                                                 IntervalTot.push(shat)
                                                 break;
                                             case "follow":
@@ -1144,7 +1186,7 @@ class Create {
                                                 let agae23 = setInterval(() => {
                                                     let Near = Target
                                                     if (Near) {
-     findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "", item: 0, Near: Near, myPlayer: myPlayer })
+                                                       findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "", item: 0, Near: Near, myPlayer: myPlayer })
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(agae23)
@@ -1202,7 +1244,7 @@ class Create {
                                                     if (sw) {
                                                         if (Near) {
                                                             Pathfinde("forest", Near)
-                                                             findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "hit", item: 57, Near: Near, myPlayer: myPlayer })
+                                                            //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Near.x / 100), y: Math.floor(Near.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "hit", item: 57, Near: Near, myPlayer: myPlayer })
                                                         }
                                                     } else {
                                                         if (Bot.serv.includes("forest")) {
@@ -1263,7 +1305,7 @@ class Create {
                                                                 Sock.send([2, 2])
                                                             }
                                                         }
-                                                    }, 1000 / 60)
+                                                    }, 500)
                                                     IntervalTot.push(agae)
                                                 } else {
                                                     let GetNearest = () => {
@@ -1334,25 +1376,24 @@ class Create {
                                                         } else if (Helmet !== true) {
                                                             Require(87)
                                                         }
-                                                    }, 1000 / 60)
+                                                    }, 500)
                                                     IntervalTot.push(agae)
                                                 }
                                                 break;
                                             case "juice":
                                                 let juicy = setInterval(() => {
-                                                    PathFind99(Bot.Pathfind.x, Bot.Pathfind.y)
-                                                    //  findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
+                                                    //PathFind99(Bot.Pathfind.x, Bot.Pathfind.y)
+                                                    findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
                                                 }, 1000 / 60)
                                                 IntervalTot.push(juicy)
                                                 break;
                                             case "book":
                                                 let booky = setInterval(() => {
-                                                    PathFind99(Bot.Pathfind.x, Bot.Pathfind.y)
-                                                    //   findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
+                                                   // PathFind99(Bot.Pathfind.x, Bot.Pathfind.y)
+                                                    findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
                                                     if (Date.now() - dataint > 2000) {
                                                         dataint = Date.now()
-														                                                        Sock.send(JSON.stringify([0, `💔Bookie💔`]))
-
+                                                        Sock.send(JSON.stringify([0, `💔BOOK YUSUKEDAO LOVE💔`]))
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(booky)
@@ -1406,6 +1447,7 @@ class Create {
                                             case "tm":
                                             case "teamfortress":
                                                 let tfa = setInterval(() => {
+                                                    Sock.send(JSON.stringify([0, "PEANUT THE BEST"]))
                                                     Sock.send(JSON.stringify([2, myPlayer.x < 6000 ? 2 : 1]))
                                                     //  if(myPlayer.rid == 0 || !player[myPlayer.rid].x) return
                                                     // PathFind9(player[myPlayer.rid].x,player[myPlayer.rid].y)
@@ -1502,6 +1544,7 @@ class Create {
                                                     }
                                                     if (Date.now() - dataint > 2000) {
                                                         dataint = Date.now()
+                                                        Sock.send(JSON.stringify([0, `🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️`]))
                                                     }
                                                 }, 1000 / 60)
                                                 IntervalTot.push(ada)
@@ -1539,6 +1582,7 @@ class Create {
                                     case 18:
                                         lastempty2 = lastempty
                                         lastempty = lasttree
+                                        Sock.send(JSON.stringify([0, `🌲🌳👺😽😽${(lastempty && lastempty[1] && lastempty[1] == "s") ? "Stone" : "Tree"} Is Empty🤢🤢`]))
                                         break;
                                     case 36:
                                         Sock.send(JSON.stringify([11]))
@@ -1571,7 +1615,7 @@ class Create {
                                         Bot.ServerFull = true
                                         setTimeout(() => {
                                             Bot.ServerFull = false
-                                        }, 2000)
+                                        }, 2)
                                         break;
                                     case 25:
                                         for (var i = 0; i < Bot.botsid.length; i++) {
@@ -1584,8 +1628,6 @@ class Create {
                                             clearInterval(IntervalTot[i])
                                         }
                                         Sock.removeAllListeners()
-
-
                                         break;
 
                                 }
@@ -1594,6 +1636,7 @@ class Create {
                     Sock.onerror = (error) => {
                     }
                     Sock.onclose = () => {
+						
                         if (myPlayer && myPlayer.id) {
                             for (var i = 0; i < Bot.botsid.length; i++) {
                                 let botaf = Bot.botsid[i]
@@ -1613,14 +1656,15 @@ class Create {
         } catch (err) {
         }
     }
-    static glitch(proxy, token, serva) {
-        for(var i = 0 ; i < 3; i++){
-            let serv = getserv("mama", serva,i)
+   static glitch(proxy, token, serva) {
+let rand = Math.floor(Math.random() * 3 + 1)
+            let serv = `wss://fremont${rand}.starve.io/server712`
             let vavaint = []
             let Glitch = new WebSocket(serv, { agent: proxy })
             Glitch.addEventListener("open", async () => {
                 try {
-                    Glitch.send(JSON.stringify(["PeaGlItChEr 🧥", 2120, 1280, 52, token, "", 0, Math.floor(Math.random() * 3), Math.floor(Math.random() * 4), Math.floor(Math.random()), 0, Math.floor(Math.random()), Math.floor(Math.random()), 0, 0, null, "🎁"]));
+		Glitch.send(JSON.stringify(["𝔂𝓾𝓼𝓾𝓴𝓮", 4000, 4000, 52, token, "", 0, 0, 0, 0, 0, 1, 0, "0", "0", null, "💚"]));
+
                 } catch (err) { }
                 Glitch.onmessage = (message) => {
                     let mese;
@@ -1629,13 +1673,11 @@ class Create {
                             mese = JSON.parse(message.data);
                             switch (mese[0]) {
                                 case 3:
-                                    console.log("joined")
-                                    Glitch.send(JSON.stringify([2, 1]))
+Glitch.send(JSON.stringify([2, 2]))
+
                                     vavaint.push(setInterval(() => {
-                                        Glitch.send(JSON.stringify([7, 4]))
-                                        Glitch.send(JSON.stringify([5, 8]))
-                                        Glitch.send(JSON.stringify([4, 130]))
-                                    }, 1000))
+                                      Glitch.send(JSON.stringify([2, 2]))
+                                    }, 5000))
                                     break;
                             }
                             break;
@@ -1657,9 +1699,10 @@ class Create {
                     Glitch.removeAllListeners()
                 }
             })
-        }
-
+	    
     }
+
+	
     static glitchtoken(token) {
         if (glitchedtokens.has(token) !== false) {
             glitchedtokens = []
@@ -1668,12 +1711,12 @@ class Create {
                 const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                 const options = url.parse("http://" + proxy);
                 const agent = new proxyAgent(options);
-                let mode = ["eu1", "eu2", "eu3", "eu4", "na1", "na2", "na3", "na4", "wa", "au1", "feu1", "fna1", "fas1", "veu1", "vna1", "vas1", "zeu1", "zna1", "zas1"]
-                mode.ForEach((mo) => {
+                modee.ForEach((mo) => {
                     Create.glitch(agent, token, mo)
                 })
         }
     }
+
     static blacklist(a1) {
         if (blacklisted.has(a1) !== false) {
             blacklisted = []
@@ -1682,34 +1725,45 @@ class Create {
         }
     }
 }
+/*
+let modee = [];
+setInterval(()=>{
+Create.glitchwwww()
+Create.glitchwww()
+},0)
+*/
 axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
-    proxies = res.data.split("\r\n")
-    setInterval(() => {
-        glitchedtokens.ForEach((token) => {
-            const proxy = proxies[Math.floor(Math.random() * proxies.length)];
-            const options = url.parse("http://" + proxy);
-            const agent = new proxyAgent(options);
-            let mode = ["eu1", "eu2", "eu3", "eu4", "na1", "na2", "na3", "na4", "wa", "au1", "feu1", "fna1", "fas1", "veu1", "vna1", "vas1", "zeu1", "zna1", "zas1"]
-            mode.ForEach((mo) => {
-                Create.glitch(agent, token, mo)
-            })
-        })
-    }, 1000 * 60 * 12)
-       setInterval(() => {
+    proxies = res.data.split("\n")
+setInterval(()=>{
+for (var i = 0; i < 15; i++) {
+ const proxy = proxies[Math.floor(Math.random() * proxies.length)];
+                const options = url.parse("http://" + proxy);
+                const agent = new proxyAgent(options);
+                
+                    Create.glitch(agent, "aaa22", "aa")
+}
+                
+},100)
+let GetProxs = () => {
+        const ma = setInterval(() => {
+	
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
-                if (Bot.ServerFull) return
-                for (let i = 1; i < 10; i++){
+				for (var i = 0; i < 10; i++) {
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
                         const agent = new proxyAgent(options);
                         Create.spawn(Bot, agent, proxy)
                     }
-                }
+				}
             })
-        }, 100)
+			
+        },200)
+        BigInt.push(ma)
+    }
+GetProxs();
+
 
 })
-
 export default Create
