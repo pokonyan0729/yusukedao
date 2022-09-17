@@ -1,3 +1,4 @@
+
 import WebSocket from "ws"
 import fs from "fs"
 import proxyAgent from "https-proxy-agent";
@@ -17,11 +18,13 @@ let allbot = true;
 let getserv = (mode, smt, ok, a) => {
     mode = mode.toLowerCase()
     let rand = Math.floor(Math.random() * 3 + 1)
+var words = ['frankfurt', 'toronto'];
+var FUCKINGGG = words[Math.floor(Math.random() * words.length)];
     switch (mode) {
-        case "pathfind": case "pathfinder": return `wss://singapore${rand}.starve.io/server711`
-        case "farmred": case "unblockred": case "farmblue": case "unblockblue": case "kill": return `wss://fremont${rand}.starve.io/server712`
-        case "tm": case "teamfortress": return `wss://toronto${rand}.starve.io/server747`
-        case "hg": case "hunger": return `wss://frankfurt${rand}.starve.io/server736`
+        case "pathfind": case "pathfinder": return `wss://${FUCKINGGG + rand}.starve.io/server711`
+        case "farmred": case "unblockred": case "farmblue": case "unblockblue": case "kill": return `wss://${FUCKINGGG + rand}.starve.io/server712`
+        case "tm": case "teamfortress": return `wss://${FUCKINGGG + rand}.starve.io/server747`
+        case "hg": case "hunger": return `wss://${FUCKINGGG + rand}.starve.io/server736`
         case "xd": return `wss://dallas${rand}.starve.io/server3188`
         case `full`: case `score`: case `juice`: case `book`: case `afk`: case `hunt`: case "follow": case "target": case `none`: case `mama`:
             let linka = "wss://"
@@ -42,20 +45,20 @@ let getserv = (mode, smt, ok, a) => {
                             rand = ok
                         }
                         if (smt.includes("eu")) {
-                            linka += `frankfurt${rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
-                            linke += `frankfurt${rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linka += `${FUCKINGGG + rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linke += `${FUCKINGGG + rand}.starve.io/server-eu-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("na")) {
-                            linka += `frankfurt${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
-                            linke += `frankfurt${rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linka += `${FUCKINGGG + rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linke += `${FUCKINGGG + rand}.starve.io/server-na-${smt.includes("f") ? "forest-" : smt.includes("v") ? "vampire-" : smt.includes("z") ? "zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("as")) {
-                            linka += `frankfurt${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
-                            linke += `frankfurt${rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linka += `${FUCKINGGG + rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
+                            linke += `${FUCKINGGG + rand}.starve.io/server-as${smt.includes("f") ? "-forest-" : smt.includes("v") ? "-vampire-" : smt.includes("z") ? "-zombie-" : ""}${smt[smt.includes("f") || smt.includes("v") || smt.includes("z") ? 3 : 2]}`
                         } else if (smt.includes("wa")) {
-                            linka += `frankfurt${rand}.starve.io/server-wa`
-                            linke += `frankfurt${rand}.starve.io/server-wa`
+                            linka += `${FUCKINGGG + rand}.starve.io/server-wa`
+                            linke += `${FUCKINGGG + rand}.starve.io/server-wa`
                         } else if (smt.includes("au")) {
-                            linka += `toronto${rand}.starve.io/server-au1`
-                            linke += `toronto${rand}.starve.io/server-au1`
+                            linka += `${FUCKINGGG + rand}.starve.io/server-au1`
+                            linke += `${FUCKINGGG + rand}.starve.io/server-au1`
                         }
                     }
                 }
@@ -252,7 +255,7 @@ class Create {
                     const optionse = url.parse("http://" + proxye);
                     const agente = new proxyAgent(optionse);
                     let taken = Bot.lag ? "🤎" : "💚"
-
+                   
                     Sock.send(JSON.stringify(["☑️yusukedao☑️", 4000,4000, 52, Bot.Mode == "score" ? Bot.token : "", Bot.Mode == "score" ? Bot.token_id : "", 0, Math.floor(Math.random() * 3), Math.floor(Math.random() * 4), Math.floor(Math.random()), 0, Math.floor(Math.random()), Math.floor(Math.random()),Bot.Pathfind.Tok1, Bot.Pathfind.Tok2 , null, (taken ? taken : tokens.pop() || tokens.shift())]));
 
 			
@@ -1146,11 +1149,12 @@ class Create {
                                         }
                                         break;
                                     case 3:
+
                                         if (serva !== "na" && Bot.workingserv == null) {
                                             Bot.workingserv = serva
                                             setTimeout(() => {
                                                 Bot.workingserv = null
-                                            }, 5000)
+                                            }, 2000)
                                         }
                                         myPlayer.x = mese[3]
                                         myPlayer.y = mese[10]
@@ -1170,15 +1174,10 @@ class Create {
                                                 Sock.send(JSON.stringify([5, 217]))
                                                 let shat = setInterval(() => {
 
-                                 
+                                 findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28,2,155,168,104,129,112,119,161,216,217] })
 
-                                                }, 1000/60)
-                                             if (myPlayer.y > 12400) {
-                                                        findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(12553 / 100), y: Math.floor(12648 / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28,2,155,168,104,129,112,119,161,216,217] })
-                                                    }
-                                 if (myPlayer.y < 12400) {
-                                                        findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(11000 / 100), y: Math.floor(14000 / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28,2,155,168,104,129,112,119,161,216,217] })
-                                                    }
+                                                }, 1000 / 60)
+                                            
                                                 IntervalTot.push(shat)
                                                 break;
                                             case "follow":
@@ -1305,7 +1304,7 @@ class Create {
                                                                 Sock.send([2, 2])
                                                             }
                                                         }
-                                                    }, 500)
+                                                    }, 1000 / 60)
                                                     IntervalTot.push(agae)
                                                 } else {
                                                     let GetNearest = () => {
@@ -1376,7 +1375,7 @@ class Create {
                                                         } else if (Helmet !== true) {
                                                             Require(87)
                                                         }
-                                                    }, 500)
+                                                    }, 1000 / 60)
                                                     IntervalTot.push(agae)
                                                 }
                                                 break;
@@ -1384,7 +1383,7 @@ class Create {
                                                 let juicy = setInterval(() => {
                                                     //PathFind99(Bot.Pathfind.x, Bot.Pathfind.y)
                                                     findpath({ x: Math.floor(myPlayer.x / 100), y: Math.floor(myPlayer.y / 100) }, { x: Math.floor(Bot.Pathfind.x / 100), y: Math.floor(Bot.Pathfind.y / 100) }, Bot.serv && Bot.serv.includes("forest") ? 154 : 230, Bot.serv && Bot.serv.includes("forest") ? 154 : 310, { action: "drop", item: [28, 104, 232, 107, 184] })
-                                                }, 1000 / 60)
+                                                }, 80)
                                                 IntervalTot.push(juicy)
                                                 break;
                                             case "book":
@@ -1395,7 +1394,7 @@ class Create {
                                                         dataint = Date.now()
                                                         Sock.send(JSON.stringify([0, `💔BOOK YUSUKEDAO LOVE💔`]))
                                                     }
-                                                }, 1000 / 60)
+                                                }, 80)
                                                 IntervalTot.push(booky)
                                                 break;
                                             case "full":
@@ -1404,37 +1403,7 @@ class Create {
                                                 }, 2000)
                                                 IntervalTot.push(anotheronee)
                                                 break;
-                                            case "xd":
-                                                //Sock.send(JSON.stringify([6,139]))
-                                                if (Number(Bot.Pathfind.lol) == 1) {
-                                                    Sock.send(JSON.stringify([2, 4]))
-                                                    setTimeout(() => {
-                                                        Sock.send(JSON.stringify([2, 1]))
-                                                        setTimeout(() => {
-                                                            Sock.send(JSON.stringify([2, 0]))
-                                                            parted = true
-                                                            Sock.send([5, 59])
-                                                        }, 4000)
-                                                    }, 3500)
-                                                } else {
-                                                    Sock.send(JSON.stringify([2, 1]))
-                                                    setTimeout(() => {
-                                                        Sock.send(JSON.stringify([2, 4]))
-                                                        setTimeout(() => {
-                                                            Sock.send(JSON.stringify([2, 0]))
-                                                            parted = true
-                                                            Sock.send([5, 59])
-                                                        }, 4000)
-                                                    }, 3500)
-                                                }
-                                                let hunhrye = setInterval(() => {
-                                                    if (!parted) return
-                                                    let Nearest = Bot.Ennemy[rid]
-                                                    if (!Nearest) Nearest = { x: 0, y: 0 }
-                                                    PathFind9c(Nearest.x, Nearest.y)
-                                                }, 1000 / 60)
-                                                IntervalTot.push(hunhrye)
-                                                break;
+                                            
                                             case "hg":
                                             case "hunger":
                                                 let hunhry = setInterval(() => {
@@ -1483,7 +1452,7 @@ class Create {
                                                             PathFind(11550, (Bot.Pathfind.Path == 1 ? 1350 : Bot.Pathfind.Path == 2 ? 1450 : Bot.Pathfind.Path == 3 ? 1550 : Bot.Pathfind.Path == 4 ? 1650 : 1750))
                                                         }
                                                     }
-                                                }, 1000 / 60))
+                                                }, 40))
                                                 break;
                                             case "unblockred":
                                                 let shiat = setInterval(() => {
@@ -1531,7 +1500,7 @@ class Create {
                                                         PathFind(1050, (Bot.Pathfind.Path == 1 ? 1350 : Bot.Pathfind.Path == 2 ? 1450 : Bot.Pathfind.Path == 3 ? 1550 : Bot.Pathfind.Path == 4 ? 1650 : 1750))
                                                     }
                                                     Chall()
-                                                }, 1000 / 60)
+                                                },  1000 / 60)
                                                 IntervalTot.push(ageagaeg)
                                                 break;
                                             case "farmblue":
@@ -1725,6 +1694,7 @@ Glitch.send(JSON.stringify([2, 2]))
         }
     }
 }
+
 /*
 let modee = [];
 setInterval(()=>{
@@ -1734,22 +1704,12 @@ Create.glitchwww()
 */
 axios.get("https://grove-quilled-lilac.glitch.me/yusukedao.txt").then(res => {
     proxies = res.data.split("\n")
-setInterval(()=>{
-for (var i = 0; i < 15; i++) {
- const proxy = proxies[Math.floor(Math.random() * proxies.length)];
-                const options = url.parse("http://" + proxy);
-                const agent = new proxyAgent(options);
-                
-                    Create.glitch(agent, "aaa22", "aa")
-}
-                
-},100)
 let GetProxs = () => {
         const ma = setInterval(() => {
 	
             servers.ForEach((server) => {
                 let Bot = server.bots[Math.floor(Math.random() * server.bots.length)]
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 60; i++) {
                     if (Bot.Actived == true && Bot.Mode !== "afk") {
                         const proxy = proxies[Math.floor(Math.random() * proxies.length)];
                         const options = url.parse("http://" + proxy);
@@ -1767,3 +1727,4 @@ GetProxs();
 
 })
 export default Create
+
