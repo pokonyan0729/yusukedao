@@ -279,7 +279,7 @@ client.on("message", async (msg) => {
             Create.glitchtoken(args[0])
             return Embed("Bot",`Added Token: ${args[0]} To Glitched Token`)
         break;
-        case `bot${devmode == true? "dev" : ""}`:
+        case `bott${devmode == true? "dev" : ""}`:
             if(updating == true){
                 return Embed("Bot","Updating Bot Please Try Again In Some Minutes")
             }
@@ -416,7 +416,7 @@ client.on("message", async (msg) => {
             updating = !updating
             return Embed(`Bot`, `Updating...`)
         break;
-        case `s${devmode == true? "dev" : ""}`:
+        case `ss${devmode == true? "dev" : ""}`:
             if (!cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) || cmddata.get(`${msg.member.user.id}${msg.guild.id}Tier`) < 1) return error("Bot Start", `You Dont Have Permissions To Bot!`)
             let memberat = check("MANAGE_MESSAGES") ? msg.mentions.members.first() || msg.member : msg.member
             for (var i = 0; i < BotData.length; i++) {
@@ -453,7 +453,7 @@ client.on("message", async (msg) => {
                 }
             }
             break;
-        case `c`:
+        case `cc`:
             let memberatete = msg.mentions.members.first() || msg.member
             for (var i = 0; i < BotData.length; i++) {
                 let ProData = BotData[i]
@@ -618,10 +618,10 @@ Create.addbott(bruh)
 //let aeaq = new Create(null, "feu1", `score` ,{Path: 3,x: 'yusukedao2',lol: 'daisukedao2',y: "feu1",Tok1: 'None',Tok2: 'None',TargetId: null}) // let's speedrun
            // Create.addbott(aeaq)
 
-let farmrr = new Create(null, "", `farmred` ,{Path: '3',x: '3',lol: '3',y: 'None',Tok1: 'None',Tok2: 'None',TargetId: ''}) // let's speedrun
+//let farmrr = new Create(null, "", `farmred` ,{Path: '3',x: '3',lol: '3',y: 'None',Tok1: 'None',Tok2: 'None',TargetId: ''}) // let's speedrun
 setTimeout(()=>{
 
-Create.addbot(farmrr)
+//Create.addbot(farmrr)
 },5000)
 //Create.addbot(farmrr)
 client.login("MTAwMDI0ODU4OTY1MTU0MjA3Ng.GVg18d.C_qNjH8F_Mq7VrQ7JV4StLbtMw6kaMSuRmRARw");
