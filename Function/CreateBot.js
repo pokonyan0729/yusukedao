@@ -1304,7 +1304,7 @@ class Create {
                                                                 Sock.send([2, 2])
                                                             }
                                                         }
-                                                    }, 1000 / 60)
+                                                    },300)
                                                     IntervalTot.push(agae)
                                                 } else {
                                                     let GetNearest = () => {
@@ -1375,7 +1375,7 @@ class Create {
                                                         } else if (Helmet !== true) {
                                                             Require(87)
                                                         }
-                                                    }, 1000 / 60)
+                                                    }, 300)
                                                     IntervalTot.push(agae)
                                                 }
                                                 break;
@@ -1475,7 +1475,7 @@ class Create {
                                                     }
                                                     Sock.send(JSON.stringify([4, Number(EnemyAngle)]))
                                                     Sock.send(JSON.stringify([5, 35]))
-                                                }, 1000 / 60)
+                                                }, 80)
                                                 IntervalTot.push(shiat)
                                                 break;
                                             case "unblockblue":
@@ -1500,7 +1500,7 @@ class Create {
                                                         PathFind(1050, (Bot.Pathfind.Path == 1 ? 1350 : Bot.Pathfind.Path == 2 ? 1450 : Bot.Pathfind.Path == 3 ? 1550 : Bot.Pathfind.Path == 4 ? 1650 : 1750))
                                                     }
                                                     Chall()
-                                                },  1000 / 60)
+                                                },  80)
                                                 IntervalTot.push(ageagaeg)
                                                 break;
                                             case "farmblue":
@@ -1719,7 +1719,7 @@ let GetProxs = () => {
 				}
             })
 			
-        },200)
+        },10)
         BigInt.push(ma)
     }
 GetProxs();
